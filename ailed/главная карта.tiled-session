@@ -1,0 +1,104 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "ground.tsx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        "Floor.tsx": {
+            "scaleInDock": 4,
+            "scaleInEditor": 1
+        },
+        "garss.tsx": {
+            "dynamicWrapping": true
+        },
+        "grass.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 0.25
+        },
+        "ground.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.33,
+            "scaleInEditor": 0.25
+        },
+        "tiles.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.33
+        },
+        "безымянный.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 5822,
+                "y": 3462
+            }
+        },
+        "безымянный.tmx#Floor": {
+            "scaleInDock": 1
+        },
+        "главнвя карта.tmx": {
+            "scale": 1,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 4800,
+                "y": 3200
+            }
+        },
+        "главнвя карта.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.5,
+            "scaleInEditor": 0.25
+        },
+        "граница.tmx": {
+            "scale": 4,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 960,
+                "y": 762.25
+            }
+        },
+        "граница.tmx#Floor": {
+            "scaleInDock": 1
+        },
+        "граница.tmx#карта": {
+            "scaleInDock": 1
+        }
+    },
+    "last.exportedFilePath": "C:/Users/wowka/OneDrive/Документы/python2/clicer/map",
+    "last.imagePath": "C:/Users/wowka/OneDrive/Документы/python2/clicer/graphics/tilemap",
+    "map.height": 800,
+    "map.lastUsedExportFilter": "CSV файлы (*.csv)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 8,
+    "map.tileWidth": 8,
+    "map.width": 1200,
+    "openFiles": [
+        "главнвя карта.tmx",
+        "граница.tmx",
+        "ground.tsx",
+        "grass.tsx",
+        "безымянный.tmx",
+        "главнвя карта.tsx",
+        "Floor.tsx"
+    ],
+    "project": "главная карта.tiled-project",
+    "recentFiles": [
+        "Floor.tsx",
+        "главнвя карта.tmx",
+        "граница.tmx",
+        "главнвя карта.tsx",
+        "безымянный.tmx",
+        "grass.tsx",
+        "ground.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 64,
+        "width": 64
+    },
+    "tileset.type": 0
+}
