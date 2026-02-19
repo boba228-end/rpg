@@ -1,4 +1,5 @@
 import pygame 
+import dialog
 from scripts import settings
 from scripts import antites
 from scripts import map
@@ -7,10 +8,8 @@ from scripts import inwentar
 from scripts import particlas
 from scripts import widget
 from scripts import batl
-
 pygame.init()
 экран = pygame.display.set_mode((settings.WIDTH,settings.HEIGHT))
-inwentar.load()
 batl.load_fon()
 glass_1 = pygame.Surface((settings.WIDTH,settings.HEIGHT),pygame.SRCALPHA)
 glass_dark = pygame.Surface((settings.WIDTH,settings.HEIGHT),pygame.SRCALPHA)
@@ -28,16 +27,14 @@ print(враги)
 partikals = []
 steat = "game"
 clik = False
-inwentaria = False
+font = pygame.font.Font(None,100)
+press_f_image = font.render('press "F"',1,(42,42,42))
 def slot_con():
       global steat
       steat = "game"
- 
 widget = widget.Button(settings.WIDTH/2-100,300,200,50,"black","yellow","continue","white","black",55)
 widget.slot = slot_con
-while True:
-     print(len(враги))
-     pygame.display.set_caption(str(pygame.mouse.get_pos()))
+while True:     
      if steat == "game":
           pl.ener += 0.02
           
@@ -81,8 +78,8 @@ while True:
                i.render(экран,карта.камера)
           pl.render_hp(экран) 
           clik = False
-          if inwentaria == True:
-                inwentar.render(экран)
+          if oleg.cehk_for_dialog(pl) == True:
+               экран.blit(press_f_image,(settings.WIDTH/2-press_f_image.get_width()/2,300))
           for ev in pygame.event.get():
                     if ev.type == pygame.MOUSEBUTTONDOWN:
                          clik = True
@@ -93,14 +90,14 @@ while True:
                               pl.attak(травы,partikals,враги,экран)
                          if ev.key == pygame.K_a:
                               pl.runl = True
-                         if ev.key == pygame.K_e:
-                              inwentaria = not(inwentaria)
                          if ev.key == pygame.K_d:
                               pl.runr = True
                          if ev.key == pygame.K_w:
                               pl.runu = True
                          if ev.key == pygame.K_s:
                               pl.rund = True
+                         if ev.key == pygame.K_f and  oleg.cehk_for_dialog(pl) == True:
+                              dialog.start_dialog("oleg")
                          if ev.key == pygame.K_TAB:
                               иветнтарь = not иветнтарь
                          if ev.key == pygame.K_ESCAPE:
@@ -115,8 +112,9 @@ while True:
                               pl.runu = False         
                          if ev.key == pygame.K_s:
                               pl.rund = False
-          
+          dialog.render(экран,clik)
           pygame.display.update()
+
      if steat == "pause":
           glass_dark.fill((0,0,0,200))
           экран.blit(glass_1,(0,0))

@@ -60,3 +60,13 @@ class Image_button:
             pygame.draw.rect(экран,self.collor_border,(self.bbx.left-self.border_width,self.bbx.top-self.border_width,self.bbx.width+self.border_width*2,self.bbx.height+self.border_width*2))
             pygame.draw.rect(экран,(self.aktive_collor),(self.bbx),)
         экран.blit(self.new_картинка,(self.bbx.centerx-self.new_картинка.get_width()/2,self.bbx.top),)
+class Vidor_Button(Button):
+    def render(self,экран):
+        if self.aktive == False:
+            pygame.draw.rect(экран,(self.collor),(self.bbx),border_radius=7)
+            tmg = self.font.render(self.text,False,self.tcollor)
+            экран.blit(tmg,(self.bbx.x,self.bbx.y+self.bbx.height/2-tmg.get_height()/2))
+        if self.aktive == True:
+            pygame.draw.rect(экран,(self.aktive_collor),(self.bbx),border_radius=7)
+            tmg = self.font.render(self.text,False,self.taktive_color)
+            экран.blit(tmg,(self.bbx.x,self.bbx.y+self.bbx.height/2-tmg.get_height()/2))
