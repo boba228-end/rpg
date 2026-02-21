@@ -1,4 +1,5 @@
 import pygame 
+import dialog
 from scripts import settings
 from scripts import antites
 from scripts import map
@@ -7,6 +8,7 @@ from scripts import inwentar
 from scripts import particlas
 from scripts import widget
 from scripts import batl
+
 
 pygame.init()
 экран = pygame.display.set_mode((settings.WIDTH,settings.HEIGHT))
@@ -32,7 +34,11 @@ inwentaria = False
 def slot_con():
       global steat
       steat = "game"
- 
+def inkris_exp(kol_vo = 1):
+     pl.exp += kol_vo
+     if pl.exp == 100:
+          dialog.change_meta("oleg","good")
+          
 widget = widget.Button(settings.WIDTH/2-100,300,200,50,"black","yellow","continue","white","black",55)
 widget.slot = slot_con
 while True:
@@ -71,9 +77,6 @@ while True:
           for i in враги:
                i.render(экран,карта.камера)
                i.update(враги) 
-          if иветнтарь == True:
-               inwentar.render(экран)
-               inwentar.utate()
           for i in NPCs_dio:
                 i.render(экран,карта.камера)
                 i.uptate()
@@ -83,6 +86,9 @@ while True:
           clik = False
           if inwentaria == True:
                 inwentar.render(экран)
+          if иветнтарь == True:
+               inwentar.render(экран)
+               inwentar.utate()
           for ev in pygame.event.get():
                     if ev.type == pygame.MOUSEBUTTONDOWN:
                          clik = True
@@ -99,6 +105,8 @@ while True:
                               pl.runr = True
                          if ev.key == pygame.K_w:
                               pl.runu = True
+                         if ev.key == pygame.K_g:
+                               inkris_exp(100)
                          if ev.key == pygame.K_s:
                               pl.rund = True
                          if ev.key == pygame.K_TAB:

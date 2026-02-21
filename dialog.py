@@ -27,3 +27,12 @@ def vibor_sdelan(otv):
     # otv = ответ игрока(словарик)
     chek_point = otv["next"]
 
+def change_meta(name,new_meta):
+    start_dialog(name)
+    f = open(f"dialogs/{name}.json","w")
+    dialog["meta"] = new_meta
+    json.dump(dialog,f)
+    f.close()
+
+
+

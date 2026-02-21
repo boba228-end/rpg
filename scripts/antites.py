@@ -73,7 +73,7 @@ class Entity:
 class Playr(Entity):
      def __init__(self,x,y,speed,map):
         self.karent_anime = "down"
-        
+        self.exp = 0
         self.таймер = 0
         self.HP = 100
         self.MAXhp = 100
