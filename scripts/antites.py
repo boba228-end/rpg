@@ -207,11 +207,13 @@ class Playr(Entity):
             if bxpl.colliderect(bxvr):
                 batl.run(экран,self,i)
          for i in травы.copy():
+           
            if i.bxgrass.colliderect(bxpl):
                травы.remove(i)
-               inwentar.add_inwentar("трава",1)
                партиклы = random.randint(5,12)
+               inwentar.add_inwentar("трава",1)
                for y in range(партиклы):
+                   
                    par = particlas.Partikl(i.x-random.randint(10,25),i.y-random.randint(10,25),random.randint(1,6))
                    партикалс.append(par)
 class Anamy(Entity):
@@ -290,9 +292,18 @@ class Spirit_diologNPC(Spirit):
         self.name = name
         self.name_image = font.render(str(self.name),True,"Black")
         self.dil_ar_bx = pygame.Rect(x-25,y-25,100,100)
+
     def uptate(self):
         self.animes[self.karent_anime].uptate()
+
     def render(self, экран, камера):
          super().render(экран, камера)
          pygame.draw.rect(экран,(255,0,0),(self.dil_ar_bx),100)
 
+    def cehk_for_dialog(self,playr):
+        cehk = False
+        if self.dil_ar_bx.colliderect(playr.get_bx()):
+            cehk = True
+        else:
+            cehk = False
+        return(cehk)
