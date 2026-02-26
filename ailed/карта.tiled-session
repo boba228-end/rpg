@@ -1,0 +1,63 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "граница.tmx",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "file.lastUsedOpenFilter": "Все файлы (*)",
+    "fileStates": {
+        "details.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "безымянный.tmx": {
+            "scale": 0.529625,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 960.1132877035637,
+                "y": 799.6223743214539
+            }
+        },
+        "безымянный.tmx#Floor": {
+            "scaleInDock": 1
+        },
+        "граница.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 1422.727272727273,
+                "y": 813.6363636363637
+            }
+        },
+        "граница.tmx#Floor": {
+            "scaleInDock": 1
+        },
+        "граница.tmx#карта": {
+            "scaleInDock": 1
+        }
+    },
+    "last.exportedFilePath": "C:/Users/wowka/OneDrive/Документы/python2/clicer/map",
+    "last.imagePath": "C:/Users/wowka/OneDrive/Документы/python2/clicer/graphics/tilemap",
+    "map.height": 300,
+    "map.lastUsedExportFilter": "CSV файлы (*.csv)",
+    "map.width": 300,
+    "openFiles": [
+        "details.tsx",
+        "безымянный.tmx",
+        "граница.tmx"
+    ],
+    "project": "карта.tiled-project",
+    "recentFiles": [
+        "details.tsx",
+        "безымянный.tmx",
+        "граница.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 64,
+        "width": 64
+    }
+}
