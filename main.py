@@ -30,11 +30,15 @@ partikals = []
 steat = "game"
 clik = False
 font = pygame.font.Font(None,100)
-press_f_image = font.render('press "F"',1,(42,42,42))\
-
+press_f_image = font.render('press "F"',1,(42,42,42))
 def slot_con():
       global steat
       steat = "game"
+def inkris_exp(kol_vo = 1):
+     pl.exp += kol_vo
+     if pl.exp == 100:
+          dialog.change_meta("oleg","good")
+inwentar.load()
 widget = widget.Button(settings.WIDTH/2-100,300,200,50,"black","yellow","continue","white","black",55)
 widget.slot = slot_con
 while True:     
@@ -82,9 +86,11 @@ while True:
                i.render(экран,карта.камера)
           pl.render_hp(экран) 
           clik = False
+          if иветнтарь == True:
+               inwentar.render(экран)
+               inwentar.utate()
           if oleg.cehk_for_dialog(pl) == True:
                экран.blit(press_f_image,(settings.WIDTH/2-press_f_image.get_width()/2,300))
-          kvest.render(экран)
           for ev in pygame.event.get():
                     if ev.type == pygame.MOUSEBUTTONDOWN:
                          clik = True
@@ -97,6 +103,7 @@ while True:
                               pl.runl = True
                          if ev.key == pygame.K_d and dialog.in_dialog == False:
                               pl.runr = True
+                         
                          if ev.key == pygame.K_w and dialog.in_dialog == False:
                               pl.runu = True
                          if ev.key == pygame.K_s and dialog.in_dialog == False:

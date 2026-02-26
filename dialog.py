@@ -18,6 +18,7 @@ def start_dialog(name):
     global nome
     global in_dialog
     global Buttons_vidor,button
+    global Buttons_vidor
     nome = name
     f = open(f"dialogs/{name}.json",encoding="utf-8")
     dialog = json.load(f)
@@ -56,6 +57,15 @@ def vibor_sdelan(otv):
         u.slot = lambda otv = i:vibor_sdelan(otv)
         Buttons_vidor.append(u)
         y -= 45
+
+def change_meta(name,new_meta):
+    start_dialog(name)
+    f = open(f"dialogs/{name}.json","w")
+    dialog["meta"] = new_meta
+    json.dump(dialog,f)
+    f.close()
+
+
 
 def render(экран,klik):
     if in_dialog == False:

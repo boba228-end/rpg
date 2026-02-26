@@ -4,6 +4,7 @@ from scripts import anime
 from scripts import utils
 from scripts import particlas
 from scripts import batl
+from scripts import inwentar
 import csv
 
 pygame.init()
@@ -72,7 +73,7 @@ class Entity:
 class Playr(Entity):
      def __init__(self,x,y,speed,map):
         self.karent_anime = "down"
-        
+        self.exp = 0
         self.таймер = 0
         self.HP = 100
         self.MAXhp = 100
@@ -210,6 +211,7 @@ class Playr(Entity):
            if i.bxgrass.colliderect(bxpl):
                травы.remove(i)
                партиклы = random.randint(5,12)
+               inwentar.add_inwentar("трава",1)
                for y in range(партиклы):
                    par = particlas.Partikl(i.x-random.randint(10,25),i.y-random.randint(10,25),random.randint(1,6))
                    партикалс.append(par)
