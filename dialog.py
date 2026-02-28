@@ -28,9 +28,11 @@ def start_dialog(name):
     button = None
     y = 680
     for i in get_otv():
+        print(i)
         u = widget.Vidor_Button(50,y,settings.WIDTH,50,"gray","gray",i['otv'],"Black","Yellow",45)
         Buttons_vidor.append(u)
         y -= 45
+        
 
 def get_text():
     #что говорит персонаж
@@ -49,7 +51,9 @@ def vibor_sdelan(otv):
         in_dialog = False
 
 def change_meta(name,new_meta):
+    global in_dialog
     start_dialog(name)
+    in_dialog = False
     f = open(f"dialogs/{name}.json","w")
     dialog["meta"] = new_meta
     json.dump(dialog,f)

@@ -48,7 +48,7 @@ while True:
           if pl.ener >= 100:
                 pl.ener = 100
           экран.fill((0,0,0))
-          
+          #print(str(pl.exp))
           XM = pygame.mouse.get_pos()[0]
           yM = pygame.mouse.get_pos()[1]
           pl.x += (XM+карта.камера[0] - pl.x) /5
