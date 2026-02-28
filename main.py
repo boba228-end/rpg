@@ -9,6 +9,7 @@ from scripts import inwentar
 from scripts import particlas
 from scripts import widget
 from scripts import batl
+from scripts import share
 
 pygame.init()
 экран = pygame.display.set_mode((settings.WIDTH,settings.HEIGHT))
@@ -38,13 +39,14 @@ def inkris_exp(kol_vo = 1):
      pl.exp += kol_vo
      if pl.exp == 100:
           dialog.change_meta("oleg","good")
+share.inkris_exp = inkris_exp
 inwentar.load()
 widget = widget.Button(settings.WIDTH/2-100,300,200,50,"black","yellow","continue","white","black",55)
 widget.slot = slot_con
 while True:     
      if steat == "game":
           pl.ener += 0.02
-          
+          print(pl.exp)
           if pl.ener >= 100:
                 pl.ener = 100
           экран.fill((0,0,0))
@@ -103,7 +105,8 @@ while True:
                               pl.runl = True
                          if ev.key == pygame.K_d and dialog.in_dialog == False:
                               pl.runr = True
-                         
+                         if ev.key == pygame.K_j and dialog.in_dialog == False:
+                              inkris_exp(100)
                          if ev.key == pygame.K_w and dialog.in_dialog == False:
                               pl.runu = True
                          if ev.key == pygame.K_s and dialog.in_dialog == False:

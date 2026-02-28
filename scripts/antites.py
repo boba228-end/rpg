@@ -6,7 +6,8 @@ from scripts import particlas
 from scripts import batl
 from scripts import inwentar
 import csv
-
+import os
+import json
 pygame.init()
 font = pygame.font.Font(None,40)
 
@@ -291,13 +292,17 @@ class Spirit_diologNPC(Spirit):
         self.name = name
         self.name_image = font.render(str(self.name),True,"Black")
         self.dil_ar_bx = pygame.Rect(x-25,y-25,100,100)
-
+    def cheek_move(self,exp):
+        if os.path.exists(f"moves/{self.name}_{exp}.json") == True:
+            f = open(f"moves/{self.name}_{exp}.json","rb")
+            moves = json.load(f)
+            f.close()
     def uptate(self):
         self.animes[self.karent_anime].uptate()
 
     def render(self, экран, камера):
          super().render(экран, камера)
-         pygame.draw.rect(экран,(255,0,0),(self.dil_ar_bx),100)
+          
 
     def cehk_for_dialog(self,playr):
         cehk = False

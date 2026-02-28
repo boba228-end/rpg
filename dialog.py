@@ -2,6 +2,7 @@ import pygame
 import json
 from scripts import widget
 from scripts import settings
+from scripts import share
 pygame.init()
 
 dialog  = {}
@@ -47,6 +48,10 @@ def get_otv():
 def vibor_sdelan(otv):
     global chek_point
     global in_dialog
+    if "aqtion" in otv:
+        if otv["aqtion"] == "add exp":
+            caunt = otv["caunt"]
+            share.inkris_exp(caunt)
     # otv = ответ игрока(словарик)
     chek_point = otv["next"]
     if chek_point == "конец":
@@ -61,6 +66,7 @@ def vibor_sdelan(otv):
         y -= 45
 
 def change_meta(name,new_meta):
+
     global in_dialog
     start_dialog(name)
     in_dialog = False
