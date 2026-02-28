@@ -17,6 +17,7 @@ def start_dialog(name):
     global chek_point
     global nome
     global in_dialog
+    global Buttons_vidor,button
     global Buttons_vidor
     nome = name
     f = open(f"dialogs/{name}.json",encoding="utf-8")
@@ -30,6 +31,7 @@ def start_dialog(name):
     for i in get_otv():
         print(i)
         u = widget.Vidor_Button(50,y,settings.WIDTH,50,"gray","gray",i['otv'],"Black","Yellow",45)
+        u.slot = lambda otv = i:vibor_sdelan(otv)
         Buttons_vidor.append(u)
         y -= 45
         
@@ -49,6 +51,14 @@ def vibor_sdelan(otv):
     chek_point = otv["next"]
     if chek_point == "конец":
         in_dialog = False
+        return()
+    Buttons_vidor.clear()
+    y = 680
+    for i in get_otv():
+        u = widget.Vidor_Button(50,y,settings.WIDTH,50,"gray","gray",i['otv'],"Black","Yellow",45)
+        u.slot = lambda otv = i:vibor_sdelan(otv)
+        Buttons_vidor.append(u)
+        y -= 45
 
 def change_meta(name,new_meta):
     global in_dialog

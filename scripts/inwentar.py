@@ -1,4 +1,7 @@
 import pygame
+pygame.init()
+
+склад = { } 
 from scripts import utils
 pygame.init()
 
@@ -21,7 +24,6 @@ def render(экран):
     экран.blit(font.render(str(склад.get("трава",0)),True,(255,255,255)),(165,135))
 def utate():
     pass
-
 
 
 

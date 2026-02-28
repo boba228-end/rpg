@@ -213,7 +213,6 @@ class Playr(Entity):
                партиклы = random.randint(5,12)
                inwentar.add_inwentar("трава",1)
                for y in range(партиклы):
-                   
                    par = particlas.Partikl(i.x-random.randint(10,25),i.y-random.randint(10,25),random.randint(1,6))
                    партикалс.append(par)
 class Anamy(Entity):

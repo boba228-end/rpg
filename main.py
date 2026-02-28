@@ -1,5 +1,6 @@
 import pygame 
 import dialog
+import kvest
 from scripts import settings
 from scripts import antites
 from scripts import map
@@ -8,7 +9,6 @@ from scripts import inwentar
 from scripts import particlas
 from scripts import widget
 from scripts import batl
-
 
 pygame.init()
 экран = pygame.display.set_mode((settings.WIDTH,settings.HEIGHT))
@@ -51,8 +51,9 @@ while True:
           #print(str(pl.exp))
           XM = pygame.mouse.get_pos()[0]
           yM = pygame.mouse.get_pos()[1]
-          pl.x += (XM+карта.камера[0] - pl.x) /5
-          pl.y += (yM+карта.камера[1] - pl.y) /5
+          if  dialog.in_dialog == False:
+               pl.x += (XM+карта.камера[0] - pl.x) /5
+               pl.y += (yM+карта.камера[1] - pl.y) /5
           часы.tick(settings.FPS)
           ent.update()
           ent.render(экран)
@@ -75,6 +76,9 @@ while True:
           for i in враги:
                i.render(экран,карта.камера)
                i.update(враги) 
+          if иветнтарь == True:
+               inwentar.render(экран)
+               inwentar.utate()
           for i in NPCs_dio:
                 i.render(экран,карта.камера)
                 i.uptate()
@@ -95,15 +99,14 @@ while True:
                     if ev.type == pygame.KEYDOWN:
                          if ev.key == pygame.K_SPACE:
                               pl.attak(травы,partikals,враги,экран)
-                         if ev.key == pygame.K_a:
+                         if ev.key == pygame.K_a and dialog.in_dialog == False:
                               pl.runl = True
-                         if ev.key == pygame.K_d:
+                         if ev.key == pygame.K_d and dialog.in_dialog == False:
                               pl.runr = True
-                         if ev.key == pygame.K_w:
+                         
+                         if ev.key == pygame.K_w and dialog.in_dialog == False:
                               pl.runu = True
-                         if ev.key == pygame.K_g:
-                               inkris_exp(100)
-                         if ev.key == pygame.K_s:
+                         if ev.key == pygame.K_s and dialog.in_dialog == False:
                               pl.rund = True
                          if ev.key == pygame.K_f and  oleg.cehk_for_dialog(pl) == True:
                               dialog.start_dialog("oleg")
