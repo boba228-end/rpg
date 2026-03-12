@@ -2,6 +2,7 @@ import pygame
 import json
 from scripts import widget
 from scripts import settings
+from scripts import share
 pygame.init()
 
 dialog  = {}
@@ -29,10 +30,12 @@ def start_dialog(name):
     button = None
     y = 680
     for i in get_otv():
+        print(i)
         u = widget.Vidor_Button(50,y,settings.WIDTH,50,"gray","gray",i['otv'],"Black","Yellow",45)
         u.slot = lambda otv = i:vibor_sdelan(otv)
         Buttons_vidor.append(u)
         y -= 45
+        
 
 def get_text():
     #что говорит персонаж
@@ -45,6 +48,10 @@ def get_otv():
 def vibor_sdelan(otv):
     global chek_point
     global in_dialog
+    if "aqtion" in otv:
+        if otv["aqtion"] == "add exp":
+            caunt = otv["caunt"]
+            share.inkris_exp(caunt)
     # otv = ответ игрока(словарик)
     chek_point = otv["next"]
     if chek_point == "конец":
@@ -59,7 +66,10 @@ def vibor_sdelan(otv):
         y -= 45
 
 def change_meta(name,new_meta):
+
+    global in_dialog
     start_dialog(name)
+    in_dialog = False
     f = open(f"dialogs/{name}.json","w")
     dialog["meta"] = new_meta
     json.dump(dialog,f)
