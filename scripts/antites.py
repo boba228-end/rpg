@@ -290,16 +290,30 @@ class Spirit_diologNPC(Spirit):
     def __init__(self, x, y, map,name):
         super().__init__(x, y, map)
         self.name = name
+        self.moves = []
         self.name_image = font.render(str(self.name),True,"Black")
         self.dil_ar_bx = pygame.Rect(x-25,y-25,100,100)
     def cheek_move(self,exp):
-        if os.path.exists(f"moves/{self.name}_{exp}.json") == True:
+        print(os.path.exists(f"C:/Users/Wowka/Downloads/pyton/pyton/moves/{self.name}_{exp}.json"))
+        if os.path.exists(f"C:/Users/Wowka/Downloads/pyton/pyton/moves/{self.name}_{exp}.json") == True:
             f = open(f"moves/{self.name}_{exp}.json","rb")
-            moves = json.load(f)
+            print("ура")
+            self.moves = json.load(f)
             f.close()
     def uptate(self):
         self.animes[self.karent_anime].uptate()
-
+        if len(self.moves) > 0:
+            dir = self.moves[0][0]
+            steps = self.moves[0][1]
+            if dir == "right":
+                self.x += steps
+            if dir == "left":
+                self.x -= steps
+            if dir == "down":
+                self.y += steps
+            if dir == "up":
+                self.y -= steps
+            self.moves.pop(0)
     def render(self, экран, камера):
          super().render(экран, камера)
           
