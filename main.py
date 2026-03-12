@@ -103,7 +103,8 @@ while True:
                               pl.runl = True
                          if ev.key == pygame.K_d and dialog.in_dialog == False:
                               pl.runr = True
-                         
+                         if ev.key == pygame.K_j and dialog.in_dialog == False:
+                               pl.exp += 100
                          if ev.key == pygame.K_w and dialog.in_dialog == False:
                               pl.runu = True
                          if ev.key == pygame.K_s and dialog.in_dialog == False:
