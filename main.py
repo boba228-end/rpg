@@ -21,12 +21,14 @@ glass_dark = pygame.Surface((settings.WIDTH,settings.HEIGHT),pygame.SRCALPHA)
 ent = antites.Entity(100,100,5,80,50,карта)
 pl = antites.Playr(10,10,10,карта)
 NPCs_dio = []
-oleg = antites.Spirit_diologNPC(100,100,карта,"оleg")
+oleg = antites.Spirit_diologNPC(100,100,карта,"oleg")
+
+
 NPCs_dio.append(oleg)
 травы = grass.kerate_grass()
 иветнтарь = False
 враги = antites.kreate_anmy(карта)
-print(враги)
+
 partikals = []
 steat = "game"
 clik = False
@@ -39,6 +41,7 @@ def inkris_exp(kol_vo = 1):
      pl.exp += kol_vo
      if pl.exp == 100:
           dialog.change_meta("oleg","good")
+     oleg.cheek_move(pl.exp)
 share.inkris_exp = inkris_exp
 inwentar.load()
 widget = widget.Button(settings.WIDTH/2-100,300,200,50,"black","yellow","continue","white","black",55)
@@ -46,7 +49,7 @@ widget.slot = slot_con
 while True:     
      if steat == "game":
           pl.ener += 0.02
-          print(pl.exp)
+          #print(pl.exp)
           if pl.ener >= 100:
                 pl.ener = 100
           экран.fill((0,0,0))

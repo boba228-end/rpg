@@ -9,6 +9,7 @@ dialog  = {}
 chek_point = None
 in_dialog = False
 nome = None
+таймер = 0
 max_sim = 71
 font = pygame.font.Font(None,80)
 font_2 = pygame.font.Font(None,40)
@@ -30,7 +31,6 @@ def start_dialog(name):
     button = None
     y = 680
     for i in get_otv():
-        print(i)
         u = widget.Vidor_Button(50,y,settings.WIDTH,50,"gray","gray",i['otv'],"Black","Yellow",45)
         u.slot = lambda otv = i:vibor_sdelan(otv)
         Buttons_vidor.append(u)
@@ -47,11 +47,14 @@ def get_otv():
 
 def vibor_sdelan(otv):
     global chek_point
-    global in_dialog
+    global in_dialog,таймер
     if "aqtion" in otv:
-        if otv["aqtion"] == "add exp":
+        if otv["aqtion"] == "add exp" and таймер == 0:
             caunt = otv["caunt"]
+            таймер += 1
+            print(caunt,"ok")
             share.inkris_exp(caunt)
+            таймер = 20
     # otv = ответ игрока(словарик)
     chek_point = otv["next"]
     if chek_point == "конец":
@@ -78,6 +81,9 @@ def change_meta(name,new_meta):
 
 
 def render(экран,klik):
+    global таймер
+    if таймер > 0:
+        таймер -= 1
     if in_dialog == False:
         return
     else:
