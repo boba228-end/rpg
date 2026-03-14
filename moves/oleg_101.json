@@ -1,5 +1,7 @@
 [
-    ["right",200],
-    ["down",200],
-    ["right",201]
+    ["right",400],
+    ["down",690],
+    ["right",1221],
+    ["wait_for_playr"],
+    ["red_spirit"]
 ]

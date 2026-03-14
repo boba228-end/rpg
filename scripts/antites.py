@@ -5,6 +5,7 @@ from scripts import utils
 from scripts import particlas
 from scripts import batl
 from scripts import inwentar
+from scripts import share
 import csv
 import os
 import json
@@ -292,28 +293,39 @@ class Spirit_diologNPC(Spirit):
         self.name = name
         self.moves = []
         self.name_image = font.render(str(self.name),True,"Black")
-        self.dil_ar_bx = pygame.Rect(x-25,y-25,100,100)
+        
     def cheek_move(self,exp):
         print(os.path.exists(f"C:/Users/Wowka/Downloads/pyton/pyton/moves/{self.name}_{exp}.json"))
         if os.path.exists(f"C:/Users/Wowka/Downloads/pyton/pyton/moves/{self.name}_{exp}.json") == True:
             f = open(f"moves/{self.name}_{exp}.json","rb")
-            print("ура")
+            
             self.moves = json.load(f)
             f.close()
     def uptate(self):
+        
+        self.dil_ar_bx = pygame.Rect(self.x-25,self.y-25,100,100)
         self.animes[self.karent_anime].uptate()
         if len(self.moves) > 0:
             dir = self.moves[0][0]
-            steps = self.moves[0][1]
-            if dir == "right":
-                self.x += steps
-            if dir == "left":
-                self.x -= steps
-            if dir == "down":
-                self.y += steps
-            if dir == "up":
-                self.y -= steps
-            self.moves.pop(0)
+            if dir == "wait_for_playr":
+                if self.dil_ar_bx.colliderect(share.pl.get_bx()):
+                    self.moves.pop(0)  
+            if dir == "red_spirit":
+                
+                self.karent_anime = "move"   
+            if dir in ("right","left","up","down"):
+                steps = self.moves[0][1]
+                if dir == "right":
+                    self.x += 5
+                if dir == "left":
+                    self.x -= 5
+                if dir == "down":
+                    self.y += 5
+                if dir == "up":
+                    self.y -= 5
+                self.moves[0][1] -= 5
+                if self.moves[0][1] <= 0:
+                    self.moves.pop(0)
     def render(self, экран, камера):
          super().render(экран, камера)
           

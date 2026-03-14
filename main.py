@@ -43,6 +43,7 @@ def inkris_exp(kol_vo = 1):
           dialog.change_meta("oleg","good")
      oleg.cheek_move(pl.exp)
 share.inkris_exp = inkris_exp
+share.pl = pl
 inwentar.load()
 widget = widget.Button(settings.WIDTH/2-100,300,200,50,"black","yellow","continue","white","black",55)
 widget.slot = slot_con
