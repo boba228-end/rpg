@@ -12,6 +12,7 @@ from scripts import batl
 from scripts import share
 
 pygame.init()
+
 экран = pygame.display.set_mode((settings.WIDTH,settings.HEIGHT))
 batl.load_fon()
 glass_1 = pygame.Surface((settings.WIDTH,settings.HEIGHT),pygame.SRCALPHA)
@@ -20,6 +21,7 @@ glass_dark = pygame.Surface((settings.WIDTH,settings.HEIGHT),pygame.SRCALPHA)
 карта = map.КАРТА()
 ent = antites.Entity(100,100,5,80,50,карта)
 pl = antites.Playr(10,10,10,карта)
+ctatua = antites.Spirit_diologNPC(1500,43,карта,"statua")
 NPCs_dio = []
 oleg = antites.Spirit_diologNPC(100,100,карта,"oleg")
 
@@ -57,6 +59,7 @@ while True:
           #print(str(pl.exp))
           XM = pygame.mouse.get_pos()[0]
           yM = pygame.mouse.get_pos()[1]
+          pygame.display.set_caption(str((XM+карта.камера[0],yM+карта.камера[1])))
           if  dialog.in_dialog == False:
                pl.x += (XM+карта.камера[0] - pl.x) /5
                pl.y += (yM+карта.камера[1] - pl.y) /5
@@ -92,10 +95,13 @@ while True:
                i.render(экран,карта.камера)
           pl.render_hp(экран) 
           clik = False
+          ctatua.uptate()
           if иветнтарь == True:
                inwentar.render(экран)
                inwentar.utate()
           if oleg.cehk_for_dialog(pl) == True:
+               экран.blit(press_f_image,(settings.WIDTH/2-press_f_image.get_width()/2,300))
+          if ctatua.cehk_for_dialog(pl) == True:
                экран.blit(press_f_image,(settings.WIDTH/2-press_f_image.get_width()/2,300))
           for ev in pygame.event.get():
                     if ev.type == pygame.MOUSEBUTTONDOWN:
@@ -116,6 +122,8 @@ while True:
                          if ev.key == pygame.K_s and dialog.in_dialog == False:
                               pl.rund = True
                          if ev.key == pygame.K_f and  oleg.cehk_for_dialog(pl) == True:
+                              dialog.start_dialog("oleg")
+                         if ev.key == pygame.K_f and  ctatua.cehk_for_dialog(pl) == True:
                               dialog.start_dialog("oleg")
                          if ev.key == pygame.K_TAB:
                               иветнтарь = not иветнтарь
