@@ -1,0 +1,41 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "taild/stiriworold.tmx",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "Floor.tsx": {
+            "scaleInDock": 0.75,
+            "scaleInEditor": 1
+        },
+        "taild/stiriworold.tmx": {
+            "scale": 2,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 158.75,
+                "y": 171.25
+            }
+        },
+        "taild/трава.tsx": {
+            "dynamicWrapping": true
+        }
+    },
+    "last.imagePath": "C:/Users/wowka/Downloads/pyton/pyton/graphics/grass",
+    "map.height": 100,
+    "map.lastUsedFormat": "tmx",
+    "map.width": 100,
+    "openFiles": [
+        "taild/stiriworold.tmx",
+        "Floor.tsx"
+    ],
+    "project": "безымянный.tiled-project",
+    "recentFiles": [
+        "Floor.tsx",
+        "taild/stiriworold.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.type": 1
+}

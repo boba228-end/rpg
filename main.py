@@ -58,22 +58,16 @@ while True:
           XM = pygame.mouse.get_pos()[0]
           yM = pygame.mouse.get_pos()[1]
           if  dialog.in_dialog == False:
-               pl.x += (XM+карта.камера[0] - pl.x) /5
-               pl.y += (yM+карта.камера[1] - pl.y) /5
+               #pl.x += (XM+карта.камера[0] - pl.x) /5
+               #pl.y += (yM+карта.камера[1] - pl.y) /5
+               pass
           часы.tick(settings.FPS)
           ent.update()
           ent.render(экран)
           карта.render(экран)
           карта.камера[0] += (pl.x-экран.get_width()/2-карта.камера[0])
           карта.камера[1] += (pl.y-экран.get_height()/2-карта.камера[1])
-          if карта.камера[0] < 0:
-               карта.камера[0] = 0
-          if карта.камера[1] < 0:
-               карта.камера[1] = 0
-          if карта.камера[1] > карта.карта.get_height() - settings.HEIGHT :
-               карта.камера[1] =  карта.карта.get_height() - settings.HEIGHT
-          if карта.камера[0] > карта.карта.get_width() - settings.WIDTH :
-               карта.камера[0] =  карта.карта.get_width() - settings.WIDTH
+          
           for i in partikals:
                i.render(экран,карта.камера)
                i.uptate(partikals)
