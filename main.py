@@ -55,7 +55,7 @@ while True:
                 pl.ener = 100
           экран.fill((0,0,0))
           #print(str(pl.exp))
-          XM = pygame.mouse.get_pos()[0]
+          XM = pygame.mouse.get_pos()[0] 
           yM = pygame.mouse.get_pos()[1]
           if  dialog.in_dialog == False:
                #pl.x += (XM+карта.камера[0] - pl.x) /5
