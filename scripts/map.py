@@ -4,9 +4,10 @@ pygame.init()
 
 class КАРТА:
     def __init__(self):
-        self.карта = utils.load_image("taild/stiriworold.png",1)
+        self.карта = utils.load_image("taild/bombuworold.png",3.9)
         self.камера = [0,0]
         self.границы = utils.load_border()
+        self.vxodi = utils.load_vxod()
     def render(self,экран):
         экран.blit(self.карта,(-self.камера[0],-self.камера[1]))
 

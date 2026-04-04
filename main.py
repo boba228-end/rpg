@@ -86,6 +86,8 @@ while True:
                i.render(экран,карта.камера)
           pl.render_hp(экран) 
           clik = False
+          if pl.check_for_vxod() == True:
+                экран.blit(press_f_image,(settings.WIDTH/2-press_f_image.get_width()/2,300))
           if иветнтарь == True:
                inwentar.render(экран)
                inwentar.utate()

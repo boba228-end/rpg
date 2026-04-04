@@ -6,6 +6,7 @@ from scripts import particlas
 from scripts import batl
 from scripts import inwentar
 from scripts import share
+from scripts import map
 import csv
 import os
 import json
@@ -217,6 +218,10 @@ class Playr(Entity):
                for y in range(партиклы):
                    par = particlas.Partikl(i.x-random.randint(10,25),i.y-random.randint(10,25),random.randint(1,6))
                    партикалс.append(par)
+     def check_for_vxod(self):
+        for i in self.map.vxodi:
+            if i.colliderect(self.get_bx()):
+                return(True)
 class Anamy(Entity):
     def __init__(self, x, y, speed, width, height, map):
         super().__init__(x, y, speed, width, height, map)
@@ -337,3 +342,5 @@ class Spirit_diologNPC(Spirit):
         else:
             cehk = False
         return(cehk)
+class bombook(Anamy):
+    pass
