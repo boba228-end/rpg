@@ -196,9 +196,10 @@ def run(экран,playr,враг,):
                        pl_anime = "batl_anime"
                        ctoit_2_0 = "home"
                 if ctoit_2_0 == "home":
-                    xpp -= 5         
-                    ctoit = "podgotovka_VRAG"
-                    podg_taimer = 240
+                    xpp -= 5
+                    if xpp <= 0 :         
+                        ctoit = "podgotovka_VRAG"
+                        podg_taimer = 240
             if ctoit == "podgotovka_VRAG" and vrag_hp_taimer == 0:
                 podg_taimer -= 1
                 vr_anime = "batl" 
