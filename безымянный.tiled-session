@@ -1,0 +1,90 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "taild/bombuworold.tmx",
+    "expandedProjectPaths": [
+    ],
+    "file.lastUsedOpenFilter": "Все файлы (*)",
+    "fileStates": {
+        "Floor.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 0.75,
+            "scaleInEditor": 1
+        },
+        "taild/TilesetHouse.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "taild/TilesetNature.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "taild/bombuworold.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 343.939393939394,
+                "y": 1462.1212121212122
+            }
+        },
+        "taild/details.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "taild/stiriworold.tmx": {
+            "scale": 0.25,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 122,
+                "y": 1426
+            }
+        },
+        "taild/трава.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tiled/spiritland.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 440.909090909091,
+                "y": 746.969696969697
+            }
+        }
+    },
+    "last.imagePath": "C:/Users/wowka/Downloads/Ninja Adventure - Asset Pack (1)/Ninja Adventure - Asset Pack/Backgrounds/Tilesets",
+    "map.height": 100,
+    "map.lastUsedFormat": "tmx",
+    "map.width": 100,
+    "openFiles": [
+        "taild/bombuworold.tmx",
+        "Floor.tsx",
+        "taild/details.tsx",
+        "taild/трава.tsx",
+        "taild/TilesetHouse.tsx",
+        "taild/TilesetNature.tsx",
+        "taild/TilesetNature.tsx",
+        "taild/TilesetHouse.tsx"
+    ],
+    "project": "безымянный.tiled-project",
+    "recentFiles": [
+        "taild/TilesetHouse.tsx",
+        "taild/TilesetNature.tsx",
+        "taild/трава.tsx",
+        "taild/details.tsx",
+        "Floor.tsx",
+        "taild/bombuworold.tmx",
+        "taild/stiriworold.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    },
+    "tileset.type": 0
+}

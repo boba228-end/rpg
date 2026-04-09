@@ -2,7 +2,18 @@
     "activeFile": "безымянный.tmx",
     "expandedProjectPaths": [
     ],
+    "file.lastUsedOpenFilter": "Все файлы (*)",
     "fileStates": {
+        "C:/Users/Wowka/Downloads/pyton/pyton/taild/TilesetHouse.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 1
+        },
+        "C:/Users/Wowka/Downloads/pyton/pyton/taild/bombuworold.tmx#TilesetHouse": {
+            "dynamicWrapping": false
+        },
+        "C:/Users/Wowka/Downloads/pyton/pyton/taild/трава.tsx": {
+            "dynamicWrapping": true
+        },
         "Floor.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
@@ -16,7 +27,7 @@
             }
         }
     },
-    "last.imagePath": "C:/Users/Wowka/Downloads/pyton/pyton/graphics/tilemap",
+    "last.imagePath": "C:/Users/Wowka/Downloads/pyton/pyton/Ninja Adventure - Asset Pack/Backgrounds/Tilesets",
     "map.height": 100,
     "map.lastUsedFormat": "tmx",
     "map.width": 100,
@@ -29,5 +40,10 @@
         "Floor.tsx",
         "безымянный.tmx"
     ],
-    "tileset.lastUsedFormat": "tsx"
+    "tileset.embedInMap": true,
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
 }

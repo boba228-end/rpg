@@ -57,26 +57,20 @@ while True:
                 pl.ener = 100
           экран.fill((0,0,0))
           #print(str(pl.exp))
-          XM = pygame.mouse.get_pos()[0]
+          XM = pygame.mouse.get_pos()[0] 
           yM = pygame.mouse.get_pos()[1]
           pygame.display.set_caption(str((XM+карта.камера[0],yM+карта.камера[1])))
           if  dialog.in_dialog == False:
-               pl.x += (XM+карта.камера[0] - pl.x) /5
-               pl.y += (yM+карта.камера[1] - pl.y) /5
+               #pl.x += (XM+карта.камера[0] - pl.x) /5
+               #pl.y += (yM+карта.камера[1] - pl.y) /5
+               pass
           часы.tick(settings.FPS)
           ent.update()
           ent.render(экран)
           карта.render(экран)
           карта.камера[0] += (pl.x-экран.get_width()/2-карта.камера[0])
           карта.камера[1] += (pl.y-экран.get_height()/2-карта.камера[1])
-          if карта.камера[0] < 0:
-               карта.камера[0] = 0
-          if карта.камера[1] < 0:
-               карта.камера[1] = 0
-          if карта.камера[1] > карта.карта.get_height() - settings.HEIGHT :
-               карта.камера[1] =  карта.карта.get_height() - settings.HEIGHT
-          if карта.камера[0] > карта.карта.get_width() - settings.WIDTH :
-               карта.камера[0] =  карта.карта.get_width() - settings.WIDTH
+          
           for i in partikals:
                i.render(экран,карта.камера)
                i.uptate(partikals)
@@ -95,13 +89,12 @@ while True:
                i.render(экран,карта.камера)
           pl.render_hp(экран) 
           clik = False
-          ctatua.uptate()
+          if pl.check_for_vxod() == True:
+                экран.blit(press_f_image,(settings.WIDTH/2-press_f_image.get_width()/2,300))
           if иветнтарь == True:
                inwentar.render(экран)
                inwentar.utate()
           if oleg.cehk_for_dialog(pl) == True:
-               экран.blit(press_f_image,(settings.WIDTH/2-press_f_image.get_width()/2,300))
-          if ctatua.cehk_for_dialog(pl) == True:
                экран.blit(press_f_image,(settings.WIDTH/2-press_f_image.get_width()/2,300))
           for ev in pygame.event.get():
                     if ev.type == pygame.MOUSEBUTTONDOWN:
@@ -123,7 +116,7 @@ while True:
                               pl.rund = True
                          if ev.key == pygame.K_f and  oleg.cehk_for_dialog(pl) == True:
                               dialog.start_dialog("oleg")
-                         if ev.key == pygame.K_f and  ctatua.cehk_for_dialog(pl) == True:
+                         if ev.key == pygame.K_f :
                               dialog.start_dialog("oleg")
                          if ev.key == pygame.K_TAB:
                               иветнтарь = not иветнтарь

@@ -1,6 +1,7 @@
 import pygame
 import csv
 import os
+import pytmx
 pygame.init()
 
 def load_image(путь, моштаб):
@@ -30,22 +31,17 @@ def cut_image(путь, можтаб, size):
     return(tiles)
 
 
-
-
-
-
-
-def load_border_from_CSV(путь):
-    файл = open(путь)
-    ритор = csv.reader(файл)  
-    rezald = []
-    ctroka = 0
-    for row in ритор:
-        ctolb = 0
-        for i in row:
-            if i == "24461":
-                rezald.append((ctolb*8,ctroka*8))
-            ctolb += 1
-        ctroka += 1
-    return set (rezald)
-    #return set ()
+def load_border():
+    border = []
+    world = pytmx.load_pygame("taild/stiriworold.tmx")
+    for x,y,gid in world.get_layer_by_name("границы"):
+        if gid != 0:
+            border.append((x*32,y*32))
+    return set (border)
+def load_vxod():
+    vxod = []
+    world = pytmx.load_pygame("taild/bombuworold.tmx")
+    for x,y,git in world.get_layer_by_name("Входы"):
+        if git != 0:
+            vxod.append(pygame.Rect(x*16*4,y*16*4,16*4,16*4))
+    return (vxod)

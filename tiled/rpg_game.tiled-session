@@ -1,0 +1,98 @@
+{
+    "activeFile": "spiritland.tmx",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "Pipes.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 4
+        },
+        "TilesetDesert.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 5.5
+        },
+        "TilesetFloor.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 5.5
+        },
+        "TilesetFloorB.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "TilesetFloorDetail.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.5
+        },
+        "TilesetHouse.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 5.5
+        },
+        "TilesetNature.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.5
+        },
+        "TilesetRelief.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 5.5
+        },
+        "TilesetTowers.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 3
+        },
+        "TilesetVillageAbandoned.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.5
+        },
+        "TilesetWater.tsx": {
+            "scaleInDock": 3,
+            "scaleInEditor": 5.5
+        },
+        "spiritland.tmx": {
+            "scale": 0.5,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 737,
+                "y": 474
+            }
+        },
+        "tileset_camp.tsx": {
+            "scaleInDock": 2,
+            "scaleInEditor": 5.5
+        }
+    },
+    "last.imagePath": "/home/musa/Загрузки/Ninja Adventure - Asset Pack/Backgrounds/Tilesets",
+    "map.lastUsedFormat": "tmx",
+    "openFiles": [
+        "spiritland.tmx",
+        "TilesetFloor.tsx",
+        "TilesetNature.tsx",
+        "TilesetRelief.tsx",
+        "TilesetFloorDetail.tsx",
+        "TilesetDesert.tsx",
+        "TilesetWater.tsx",
+        "TilesetVillageAbandoned.tsx",
+        "TilesetHouse.tsx",
+        "tileset_camp.tsx",
+        "Pipes.tsx"
+    ],
+    "project": "rpg_game.tiled-project",
+    "recentFiles": [
+        "Pipes.tsx",
+        "tileset_camp.tsx",
+        "TilesetHouse.tsx",
+        "TilesetVillageAbandoned.tsx",
+        "TilesetWater.tsx",
+        "TilesetDesert.tsx",
+        "TilesetFloorDetail.tsx",
+        "TilesetRelief.tsx",
+        "TilesetNature.tsx",
+        "TilesetFloor.tsx",
+        "spiritland.tmx",
+        "TilesetFloorB.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
