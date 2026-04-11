@@ -20,10 +20,10 @@ glass_dark = pygame.Surface((settings.WIDTH,settings.HEIGHT),pygame.SRCALPHA)
 часы = pygame.time.Clock()
 карта = map.КАРТА()
 ent = antites.Entity(100,100,5,80,50,карта)
-pl = antites.Playr(10,10,10,карта)
+pl = antites.Playr(750,325,10,карта)
 ctatua = antites.Spirit_diologNPC(1500,43,карта,"statua")
 NPCs_dio = []
-oleg = antites.Spirit_diologNPC(100,100,карта,"oleg")
+oleg = antites.Spirit_diologNPC(279,680,карта,"oleg")
 
 
 NPCs_dio.append(oleg)
@@ -51,7 +51,7 @@ widget = widget.Button(settings.WIDTH/2-100,300,200,50,"black","yellow","continu
 widget.slot = slot_con
 while True:     
      if steat == "game":
-          pl.ener += 0.02
+          pl.ener += 0.002
           #print(pl.exp)
           if pl.ener >= 100:
                 pl.ener = 100

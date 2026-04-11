@@ -114,6 +114,7 @@ class Playr(Entity):
 
 
      def render(self,экран,камера):
+        pygame.draw.rect(экран,(0,255,0),(self.get_bx().x-камера[0],self.get_bx().y-камера[1],self.get_bx().width,self.get_bx().height))
         if self.attaking == True: 
             if self.karent_anime == "left_attack":
                 self.animes[self.karent_anime].render(экран,камера,self.x,self.y)
@@ -301,7 +302,7 @@ class Spirit_diologNPC(Spirit):
         self.name_image = font.render(str(self.name),True,"Black")
         
     def cheek_move(self,exp):
-        print(os.path.exists(f"C:/Users/Wowka/Downloads/pyton/pyton/moves/{self.name}_{exp}.json"))
+        #print(os.path.exists(f"C:/Users/Wowka/Downloads/pyton/pyton/moves/{self.name}_{exp}.json"))
         if os.path.exists(f"C:/Users/Wowka/Downloads/pyton/pyton/moves/{self.name}_{exp}.json") == True:
             f = open(f"moves/{self.name}_{exp}.json","rb")
             
@@ -317,7 +318,7 @@ class Spirit_diologNPC(Spirit):
                     if self.dil_ar_bx.colliderect(share.pl.get_bx()):
                         self.moves.pop(0)  
                 if dir == "wait":
-                    print(self.moves[0][1])
+                    #print(self.moves[0][1])
                     self.moves[0][1] -= 1
                     if self.moves[0][1] <= 0:
                         self.moves.pop(0)

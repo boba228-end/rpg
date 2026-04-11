@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "taild/bombuworold.tmx",
+    "activeFile": "tiled/spiritland.tmx",
     "expandedProjectPaths": [
     ],
     "file.lastUsedOpenFilter": "Все файлы (*)",
@@ -23,12 +23,15 @@
             "scaleInEditor": 1
         },
         "taild/bombuworold.tmx": {
-            "scale": 0.33,
-            "selectedLayer": 2,
+            "scale": 1.5,
+            "selectedLayer": 0,
             "viewCenter": {
-                "x": 343.939393939394,
-                "y": 1462.1212121212122
+                "x": 968.3333333333333,
+                "y": 843.6666666666665
             }
+        },
+        "taild/bombuworold.tmx#TilesetHouse": {
+            "scaleInDock": 1
         },
         "taild/details.tsx": {
             "dynamicWrapping": false,
@@ -39,8 +42,8 @@
             "scale": 0.25,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 122,
-                "y": 1426
+                "x": 2730,
+                "y": 2466
             }
         },
         "taild/трава.tsx": {
@@ -48,13 +51,31 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "tiled/TilesetDesert.tsx": {
+            "scaleInDock": 1
+        },
+        "tiled/TilesetFloor.tsx": {
+            "scaleInDock": 1
+        },
+        "tiled/TilesetHouse.tsx": {
+            "scaleInDock": 1
+        },
+        "tiled/TilesetRelief.tsx": {
+            "scaleInDock": 1
+        },
+        "tiled/TilesetWater.tsx": {
+            "scaleInDock": 1
+        },
         "tiled/spiritland.tmx": {
-            "scale": 0.33,
+            "scale": 1,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 440.909090909091,
-                "y": 746.969696969697
+                "x": 319.5,
+                "y": 182.5
             }
+        },
+        "tiled/tileset_camp.tsx": {
+            "scaleInDock": 1
         }
     },
     "last.imagePath": "C:/Users/wowka/Downloads/Ninja Adventure - Asset Pack (1)/Ninja Adventure - Asset Pack/Backgrounds/Tilesets",
@@ -68,18 +89,19 @@
         "taild/трава.tsx",
         "taild/TilesetHouse.tsx",
         "taild/TilesetNature.tsx",
-        "taild/TilesetNature.tsx",
-        "taild/TilesetHouse.tsx"
+        "taild/stiriworold.tmx",
+        "tiled/spiritland.tmx"
     ],
     "project": "безымянный.tiled-project",
     "recentFiles": [
+        "taild/stiriworold.tmx",
+        "taild/bombuworold.tmx",
+        "Floor.tsx",
+        "taild/details.tsx",
+        "taild/трава.tsx",
         "taild/TilesetHouse.tsx",
         "taild/TilesetNature.tsx",
-        "taild/трава.tsx",
-        "taild/details.tsx",
-        "Floor.tsx",
-        "taild/bombuworold.tmx",
-        "taild/stiriworold.tmx"
+        "tiled/spiritland.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

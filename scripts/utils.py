@@ -33,14 +33,14 @@ def cut_image(путь, можтаб, size):
 
 def load_border():
     border = []
-    world = pytmx.load_pygame("taild/stiriworold.tmx")
+    world = pytmx.load_pygame("tiled/spiritland.tmx")
     for x,y,gid in world.get_layer_by_name("границы"):
         if gid != 0:
-            border.append((x*32,y*32))
+            border.append((x*16*3.9,y*16*3.9))
     return set (border)
 def load_vxod():
     vxod = []
-    world = pytmx.load_pygame("taild/bombuworold.tmx")
+    world = pytmx.load_pygame("tiled/spiritland.tmx")
     for x,y,git in world.get_layer_by_name("Входы"):
         if git != 0:
             vxod.append(pygame.Rect(x*16*4,y*16*4,16*4,16*4))
