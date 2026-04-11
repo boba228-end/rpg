@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset version="1.10" tiledversion="1.12.1-8-g449813058" name="TilesetWater" tilewidth="16" tileheight="16" tilecount="476" columns="28">
- <image source="../../../../../../../Загрузки/Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png" width="448" height="272"/>
+ <image source="../Ninja Adventure - Asset Pack/Backgrounds/Tilesets/TilesetWater.png" width="448" height="272"/>
  <tile id="29" probability="10"/>
  <tile id="67" probability="4"/>
  <wangsets>
