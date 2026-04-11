@@ -3,5 +3,8 @@
     ["down",690],
     ["right",1221],
     ["wait_for_playr"],
-    ["red_spirit"]
+    ["up",150],
+    ["red_spirit"],
+    ["wait",120],
+    ["removes"]
 ]

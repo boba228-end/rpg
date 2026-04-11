@@ -38,3 +38,10 @@ def load_border():
         if gid != 0:
             border.append((x*32,y*32))
     return set (border)
+def load_vxod():
+    vxod = []
+    world = pytmx.load_pygame("taild/bombuworold.tmx")
+    for x,y,git in world.get_layer_by_name("Входы"):
+        if git != 0:
+            vxod.append(pygame.Rect(x*16*4,y*16*4,16*4,16*4))
+    return (vxod)

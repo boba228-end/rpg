@@ -8,7 +8,7 @@ pygame.init()
 склад = { } 
 def load():
     global fon,grass,font
-    fon = utils.load_image("graphics/fireboll/Image20260214132900.png",1.32)
+    fon = utils.load_image("map/Image20260214132900.png",1.32)
     grass = utils.load_image("graphics/grass/grass_2.png",1)
     font = pygame.font.Font(None,40)
 def add_inwentar(название,колво):

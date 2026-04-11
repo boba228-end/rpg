@@ -22,14 +22,20 @@ def clik_sword():
 def clik_run():
     global select
     select = run_buttun
-def clik_fire():
+def clik_fire(): #огнем меч
     global ctoit_2_0,ctoit
     if ctoit == "vыbor" and PLAYR.ener >= 30:
         PLAYR.ener -= 30
         ctoit = "fire"
         ctoit_2_0 = "go"
+def click_normal_sword():
+    global select,ctoit,ctoit_2_0
+    if ctoit == "vыbor" and PLAYR.ener >= 12:
+        PLAYR.ener -= 12
+        ctoit = "normal"
+        ctoit_2_0 = "go"
 def load_fon():
-    global фон,земля,sword_button,magik_buttun,run_buttun,sword_button_sword,sword_button_fire,защита,font,efekt_fire,deadf,fire_sword,fireball_anime
+    global фон,земля,sword_button,magik_buttun,run_buttun,sword_button_sword,sword_button_fire,защита,font,efekt_fire,deadf,fire_sword,fireball_anime,click_normal_sword,sword
     фон = utils.load_image("graphics/font/ja7ti1z834f91.jpg",0.6)
     земля = utils.load_image("graphics/font/i.png",4)
     защита = utils.load_image("graphics/grass/shield (1).png",1)
@@ -37,7 +43,7 @@ def load_fon():
     deadf = utils.load_image("graphics/grass/down.png",2)
     fire_sword = utils.load_image("graphics/grass/Fired Sword.png",0.4)
     fireball_anime = anime.Lazy_Anime("graphics/fireboll",1,1)
-
+    sword = utils.load_image("graphics/player/down_idle/idle_down.png",3)
     font = pygame.font.Font(None,55)
     f = 5
     #главные кнопки
@@ -51,6 +57,7 @@ def load_fon():
     sword_button_fire = widget.Image_button(345,660,200,земля.get_height()/3-2*f,(58,58,58),(70,70,70),"graphics/grass/sword (2).png",f,"orange")
     sword_button_fire.slot = clik_fire
     sword_button_sword = widget.Image_button(345,580,200,земля.get_height()/3-2*f,(58,58,58),(70,70,70),"graphics/font/slash.png",f,"orange")
+    sword_button_sword.slot = click_normal_sword
 def render(экран,playr,враг):
     global ctoit
     global clik
@@ -168,7 +175,7 @@ def run(экран,playr,враг,):
             render(экран,playr,враг)
             update()
             
-            if ctoit == "fire":
+            if ctoit == "fire" or ctoit == "normal":
                 if ctoit_2_0 == "go":
                     xpp += 5
                     if xpp >= 680 :
@@ -178,7 +185,10 @@ def run(экран,playr,враг,):
                     taimer -= 1
                     if taimer <= 100:
                         pl_anime = "batl_attak"
-                        экран.blit(fire_sword,(800,500-47))
+                        if ctoit == "normal":
+                            экран.blit(sword,(800,500-47))
+                        if ctoit == "fire":
+                            экран.blit(fire_sword,(800,500-47))
                     if taimer == 99:
                         ВРАГ.HP -= 30 * (1 - ВРАГ.armor/10)
                         vrag_hp_taimer = 500*2
@@ -187,7 +197,7 @@ def run(экран,playr,враг,):
                        ctoit_2_0 = "home"
                 if ctoit_2_0 == "home":
                     xpp -= 5
-                    if xpp <= 0 :
+                    if xpp <= 0 :         
                         ctoit = "podgotovka_VRAG"
                         podg_taimer = 240
             if ctoit == "podgotovka_VRAG" and vrag_hp_taimer == 0:

@@ -6,6 +6,7 @@ from scripts import particlas
 from scripts import batl
 from scripts import inwentar
 from scripts import share
+from scripts import map
 import csv
 import os
 import json
@@ -217,6 +218,10 @@ class Playr(Entity):
                for y in range(партиклы):
                    par = particlas.Partikl(i.x-random.randint(10,25),i.y-random.randint(10,25),random.randint(1,6))
                    партикалс.append(par)
+     def check_for_vxod(self):
+        for i in self.map.vxodi:
+            if i.colliderect(self.get_bx()):
+                return(True)
 class Anamy(Entity):
     def __init__(self, x, y, speed, width, height, map):
         super().__init__(x, y, speed, width, height, map)
@@ -292,6 +297,7 @@ class Spirit_diologNPC(Spirit):
         super().__init__(x, y, map)
         self.name = name
         self.moves = []
+        self.live = True
         self.name_image = font.render(str(self.name),True,"Black")
         
     def cheek_move(self,exp):
@@ -302,32 +308,42 @@ class Spirit_diologNPC(Spirit):
             self.moves = json.load(f)
             f.close()
     def uptate(self):
-        
-        self.dil_ar_bx = pygame.Rect(self.x-25,self.y-25,100,100)
-        self.animes[self.karent_anime].uptate()
-        if len(self.moves) > 0:
-            dir = self.moves[0][0]
-            if dir == "wait_for_playr":
-                if self.dil_ar_bx.colliderect(share.pl.get_bx()):
-                    self.moves.pop(0)  
-            if dir == "red_spirit":
+        if self.live == True:
+            self.dil_ar_bx = pygame.Rect(self.x-25,self.y-25,100,100)
+            self.animes[self.karent_anime].uptate()
+            if len(self.moves) > 0:
+                dir = self.moves[0][0]
+                if dir == "wait_for_playr":
+                    if self.dil_ar_bx.colliderect(share.pl.get_bx()):
+                        self.moves.pop(0)  
+                if dir == "wait":
+                    print(self.moves[0][1])
+                    self.moves[0][1] -= 1
+                    if self.moves[0][1] <= 0:
+                        self.moves.pop(0)
+                if dir == "removes":
+                    self.live = False
+                if dir == "red_spirit":
                 
-                self.karent_anime = "move"   
-            if dir in ("right","left","up","down"):
-                steps = self.moves[0][1]
-                if dir == "right":
-                    self.x += 5
-                if dir == "left":
-                    self.x -= 5
-                if dir == "down":
-                    self.y += 5
-                if dir == "up":
-                    self.y -= 5
-                self.moves[0][1] -= 5
-                if self.moves[0][1] <= 0:
-                    self.moves.pop(0)
+                    self.karent_anime = "move"
+                    self.moves.pop(0)   
+                if dir in ("right","left","up","down"):
+                    steps = self.moves[0][1]
+                    if dir == "right":
+                        self.x += 5
+                    if dir == "left":
+                        self.x -= 5
+                    if dir == "down":
+                        self.y += 5
+                    if dir == "up":
+                        self.y -= 5
+                    
+                    self.moves[0][1] -= 5
+                    if self.moves[0][1] <= 0:
+                        self.moves.pop(0)
     def render(self, экран, камера):
-         super().render(экран, камера)
+         if self.live == True:
+            super().render(экран, камера)
           
 
     def cehk_for_dialog(self,playr):
@@ -337,3 +353,5 @@ class Spirit_diologNPC(Spirit):
         else:
             cehk = False
         return(cehk)
+class bombook(Anamy):
+    pass
