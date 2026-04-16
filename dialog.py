@@ -55,6 +55,11 @@ def vibor_sdelan(otv):
             print(caunt,"ok")
             share.inkris_exp(caunt)
             таймер = 20
+    if "new_meta" in otv and таймер == 0:
+
+        change_meta("oleg",otv["new_meta"])
+        таймер = 20
+        
     # otv = ответ игрока(словарик)
     chek_point = otv["next"]
     if chek_point == "конец":

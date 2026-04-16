@@ -1,10 +1,9 @@
 [
-    ["right",400],
-    ["down",690],
-    ["right",1221],
+    ["right",1540],
     ["wait_for_playr"],
-    ["up",150],
-    ["red_spirit"],
-    ["wait",120],
+    ["down",800],
+    ["wait_for_playr"],
+    ["right",300],
+    ["wait_for_playr"],
     ["removes"]
 ]

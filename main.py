@@ -94,7 +94,7 @@ while True:
           if иветнтарь == True:
                inwentar.render(экран)
                inwentar.utate()
-          if oleg.cehk_for_dialog(pl) == True:
+          if oleg.cehk_for_dialog(pl) == True and oleg.live == True:
                экран.blit(press_f_image,(settings.WIDTH/2-press_f_image.get_width()/2,300))
           for ev in pygame.event.get():
                     if ev.type == pygame.MOUSEBUTTONDOWN:
@@ -114,9 +114,7 @@ while True:
                               pl.runu = True
                          if ev.key == pygame.K_s and dialog.in_dialog == False:
                               pl.rund = True
-                         if ev.key == pygame.K_f and  oleg.cehk_for_dialog(pl) == True:
-                              dialog.start_dialog("oleg")
-                         if ev.key == pygame.K_f :
+                         if ev.key == pygame.K_f and  oleg.cehk_for_dialog(pl) == True and oleg.live == True:
                               dialog.start_dialog("oleg")
                          if ev.key == pygame.K_TAB:
                               иветнтарь = not иветнтарь

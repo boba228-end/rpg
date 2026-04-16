@@ -46,9 +46,9 @@ class Entity:
         tiles = self.map.get_iner_sechons(self.get_bx())
         for i in tiles:
             if self.runr == True:
-                self.x = i.x-self.width
+                self.x = i.x-self.width+10
             if self.runl == True:
-                self.x = i.x+i.width
+                self.x = i.x+i.width-10
 
 
 
@@ -112,7 +112,9 @@ class Playr(Entity):
         super().__init__(x,y,speed,self.width,self.height,map)
 
 
-
+     def get_bx(self):
+        bx = pygame.Rect(self.x,self.y,self.width,self.height)
+        return(bx.inflate(-20,-0))
      def render(self,экран,камера):
         pygame.draw.rect(экран,(0,255,0),(self.get_bx().x-камера[0],self.get_bx().y-камера[1],self.get_bx().width,self.get_bx().height))
         if self.attaking == True: 
