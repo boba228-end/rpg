@@ -5,7 +5,7 @@
     "fileStates": {
         "Pipes.tsx": {
             "scaleInDock": 1,
-            "scaleInEditor": 4
+            "scaleInEditor": 5.5
         },
         "TilesetDesert.tsx": {
             "scaleInDock": 2,
@@ -39,6 +39,10 @@
             "scaleInDock": 1,
             "scaleInEditor": 3
         },
+        "TilesetTowers2.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 5.5
+        },
         "TilesetVillageAbandoned.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 5.5
@@ -48,11 +52,11 @@
             "scaleInEditor": 5.5
         },
         "spiritland.tmx": {
-            "scale": 1,
-            "selectedLayer": 5,
+            "scale": 3,
+            "selectedLayer": 6,
             "viewCenter": {
-                "x": 305.5,
-                "y": 64
+                "x": 189.83333333333331,
+                "y": 130.33333333333331
             }
         },
         "tileset_camp.tsx": {
@@ -88,7 +92,7 @@
         "TilesetNature.tsx",
         "TilesetFloor.tsx",
         "spiritland.tmx",
-        "TilesetFloorB.tsx"
+        "TilesetTowers2.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
