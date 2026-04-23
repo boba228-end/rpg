@@ -30,4 +30,4 @@ def вопрос_ответ(vopros):
         )
         print(res.choices[0].message.content)
         return(otvet)
-вопрос_ответ("сколько стоят сухарики")
+вопрос_ответ("что такое кресло")

@@ -10,6 +10,7 @@ from scripts import particlas
 from scripts import widget
 from scripts import batl
 from scripts import share
+from scripts import master
 
 pygame.init()
 
@@ -24,7 +25,6 @@ pl = antites.Playr(750,325,10,карта)
 ctatua = antites.Spirit_diologNPC(1500,43,карта,"statua")
 NPCs_dio = []
 oleg = antites.Spirit_diologNPC(279,680,карта,"oleg")
-
 
 NPCs_dio.append(oleg)
 травы = grass.kerate_grass()
@@ -114,6 +114,8 @@ while True:
                               pl.runu = True
                          if ev.key == pygame.K_s and dialog.in_dialog == False:
                               pl.rund = True
+                         if ev.key == pygame.K_f and pl.check_for_vxod() == True:
+                               master.run(экран)
                          if ev.key == pygame.K_f and  oleg.cehk_for_dialog(pl) == True and oleg.live == True:
                               dialog.start_dialog("oleg")
                          if ev.key == pygame.K_TAB:
